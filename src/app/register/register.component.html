@@ -1,0 +1,29 @@
+<mat-card class="loginForm">
+  <mat-card-header>
+    <h1>Fill the info below</h1>
+  </mat-card-header>
+  <mat-card-content>
+    <form>
+      <mat-form-field appearance="outline">
+        <mat-label>Nickname</mat-label>
+        <input
+          matInput
+          placeholder="Nickname"
+          [formControl]="nicknameControl"
+        />
+        <mat-error *ngIf="nicknameControl.hasError('required')"
+          >Please enter your nickname
+        </mat-error>
+      </mat-form-field>
+      <app-typeahead
+        (tagsChanged)="getTags($event)"
+        (validation)="getValidator($event)"
+      ></app-typeahead>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="registerButton">
+      <button mat-raised-button color="primary" (click)="register()">Register</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

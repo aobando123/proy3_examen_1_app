@@ -1,0 +1,36 @@
+.loginForm {
+  margin: 0 auto;
+  max-width: 500px;
+  margin-top: 50px;
+  mat-icon {
+    margin: 0 auto;
+    width: 150px;
+    height: 150px;
+    font-size: 150px;
+    display: block;
+    color: gray;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+  a{
+    margin: 0 auto;
+  }
+}
+.loginButton {
+  margin: 0 auto;
+  width: fit-content;
+  button{
+    min-width: 50%;
+  }
+}
+
+.SignUp {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  width: fit-content;
+  a {
+    color: #3f51b5
+  }
+
+}

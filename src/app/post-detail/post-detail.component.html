@@ -1,0 +1,41 @@
+<app-menu></app-menu>
+<mat-card *ngIf="post" class="detail">
+  <mat-card-header>
+    <div>
+        <mat-card-title
+        ><b>{{ post.title }}</b></mat-card-title
+      >
+      <mat-card-subtitle>
+        By {{ post.owner.nickname }} on {{ postDate }}
+      </mat-card-subtitle>
+    </div>
+
+    <div class="{{isPostLiked ? 'like liked' : 'like'}}">
+      <span>{{ [post.likes.length] }} </span><mat-icon (click)="onLikeClick()">thumb_up</mat-icon>
+    </div>
+  </mat-card-header>
+  <div class="image">
+      <img mat-card-image src="{{ post.image }}" alt="Photo of post" />
+  </div>
+
+
+  <mat-card-content>
+    <p>
+      {{ post.text }}
+    </p>
+    <div>
+      <span class="tag" *ngFor="let tag of post.tags">#{{ tag.name }}</span>
+    </div>
+  </mat-card-content>
+  <h2> Comments</h2>
+  <mat-card-actions>
+      <mat-form-field  appearance="outline">
+          <mat-label>Comment</mat-label>
+          <textarea  [formControl]="commentBox" matInput placeholder="Write a comment here..."></textarea>
+        </mat-form-field>
+    <button (click)="onClickComment()" mat-flat-button color="primary">Comment</button>
+  </mat-card-actions>
+  <mat-card-footer>
+    <app-comment *ngFor="let comment of post.comments" [comment]="comment"></app-comment>
+  </mat-card-footer>
+</mat-card>

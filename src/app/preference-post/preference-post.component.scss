@@ -1,0 +1,13 @@
+.dashboard {
+  padding: 20px;
+  background: whitesmoke;
+}
+.postContainer {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  justify-content: space-around
+
+}

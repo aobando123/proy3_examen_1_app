@@ -1,0 +1,49 @@
+.post {
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+  mat-card-actions {
+    display: flex;
+    padding: 0 10px;
+    justify-content: flex-start;
+    margin-bottom: 5px;
+    .like {
+      cursor: pointer;
+      display: flex;
+      span{
+        line-height: 30px;
+        margin-right: 5px;
+      };
+      mat-icon {
+        &:hover{
+          color: #3f51b5;
+        }
+      }
+    }
+    .liked{
+      mat-icon {
+       color:#3f51b5;
+      }
+    }
+
+    .comments {
+      line-height: 25px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .autor {
+      line-height: 25px;
+      margin-left: auto;
+      font-style: italic;
+    }
+  }
+  mat-card-footer {
+    margin-bottom: 5px;
+    padding: 0 20px;
+    span {
+      margin: 0 5px;
+      font-size: 14px;
+    }
+
+    color: #3f51b5;
+  }
+}

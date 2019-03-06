@@ -1,0 +1,21 @@
+<div class="comment">
+  <mat-icon *ngIf="isEditable" (click)="activateEdit()" class="editableButton">
+    edit
+  </mat-icon>
+  <div *ngIf="!editMode">
+    <p>{{ comment.comment }}</p>
+    <span>By {{ comment.user.nickname }} on {{ parsedDate }}</span>
+  </div>
+
+  <div class="editableform" *ngIf="editMode">
+    <mat-form-field class="mat-form-field" appearance="outline">
+      <mat-label>Comment</mat-label>
+      <textarea
+        [formControl]="commentEdit"
+        matInput
+        placeholder="Write a comment here..."
+      ></textarea>
+    </mat-form-field>
+    <button (click)="saveEdit()" mat-flat-button color="accent">Save</button>
+  </div>
+</div>

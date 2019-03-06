@@ -1,0 +1,41 @@
+.detail {
+  padding: 30px 40px;
+  mat-card-header {
+    display: flex
+  }
+  .like {
+    margin-left: auto;
+    display: flex;
+    span{
+      height: fit-content;
+      line-height: 30px;
+      margin-right: 5px;
+    };
+      mat-icon {
+        cursor: pointer;
+        &:hover{
+          color: #3f51b5;
+        }
+      }
+    }
+    .liked{
+      mat-icon {
+       color:#3f51b5;
+      }
+    }
+
+  .image {
+    margin: 0 auto;
+    width: fit-content;
+    text-align: center;
+    .mat-card-image {
+      width: 60%;
+    }
+  }
+  .tag {
+    color: #3f51b5;
+  }
+  mat-form-field {
+    width: 100%;
+  }
+}

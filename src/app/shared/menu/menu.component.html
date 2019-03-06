@@ -1,0 +1,12 @@
+<mat-toolbar class="container" >
+  <h4> Welcome back, {{userName}}!</h4>
+  <nav class="navbar">
+    <button mat-button routerLink="/dashboard">Home</button>
+    <button mat-button routerLink="/dashboard/liked">Liked Post</button>
+    <button mat-button routerLink="/dashboard/preference">Preference Post</button>
+    <button mat-button routerLink="/dashboard/mypost">My Post</button>
+    <button routerLink="/create" mat-flat-button color="primary" class="createPost">Create Post</button>
+    <button (click)="onSignOff()" mat-button mat-flat-button color="accent">Sign off</button>
+  </nav>
+
+  </mat-toolbar>

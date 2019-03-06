@@ -1,0 +1,7 @@
+<app-menu></app-menu>
+<div class="dashboard">
+  <h1>Liked Post</h1>
+  <div class="postContainer">
+    <app-post *ngFor="let post of postList" [post]="post"></app-post>
+  </div>
+</div>

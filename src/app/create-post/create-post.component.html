@@ -1,0 +1,35 @@
+<app-menu></app-menu>
+<h2>Create post</h2>
+<form class="createForm" [formGroup]="formGroup"  >
+  <mat-form-field appearance="outline">
+    <mat-label>Title</mat-label>
+    <input matInput type="text" formControlName="title" placeholder="Title" />
+    <mat-error *ngIf="formGroup.get('title').hasError('required')" >
+        This field is required
+      </mat-error>
+  </mat-form-field>
+  <mat-form-field  appearance="outline">
+    <mat-label>Description</mat-label>
+    <textarea  matInput formControlName="description" placeholder="Description"></textarea>
+    <mat-error *ngIf="formGroup.get('description').hasError('required')" >
+      This field is required
+    </mat-error>
+  </mat-form-field>
+
+  <div class="upload-btn-wrapper">
+      <button  mat-flat-button color="accent" class="btn">Upload a file</button>
+      <input type="file" name="myfile" (change)="onFileSelected($event)" />
+      <span> {{fileName}}</span>
+      <mat-error *ngIf="formGroup.get('file').touched && formGroup.get('file').hasError('required')">
+        Please upload an image o wait to finish uploading;
+      </mat-error>
+    </div>
+
+  <app-typeahead
+  (tagsChanged)="getTags($event)"
+  (validation)="getTagsControl($event)"
+></app-typeahead>
+<div class="submitButton">
+  <button mat-flat-button color="primary" (click)="onSubmit()">Submit</button>
+</div>
+</form>
