@@ -29,7 +29,7 @@ export class PostDetailComponent implements OnInit {
   loadPost() {
     this.postService.getPost(this.id).subscribe(data => {
       this.post = data;
-      console.log(data)
+      this.post.comments = data.comments.reverse();
       this.postDate = moment(data.timestamp).format('DD-MM-YYYY');
       this.isPostLike();
     })
